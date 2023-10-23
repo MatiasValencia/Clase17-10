@@ -2,6 +2,9 @@ public class Cliente {
     private String IDCliente;
     private String nombre;
     private String email;
+    private int mes;
+    private int dia;
+    private int anio;
     //private ArrayList<Mascota> mascotas;
     //Constructor
     public Cliente(int IDGlobal, String nombre, String email) {
@@ -25,5 +28,9 @@ public class Cliente {
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+    @Override
+    public String toString() {
+        return "id: " + IDCliente + "\n" + "Fecha: " + dia + "-" + mes + "-" + anio;
     }
 }

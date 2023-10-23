@@ -2,13 +2,14 @@ import java.util.ArrayList;
 
 public class Mascota {
     // Atributos
-    private String IDMascota;
+    private int IDMascota;
     private String nombre;
     private int edad;
     private String raza;
     private String especie;
     private ArrayList<Ficha> fichas;
     private Ficha ultimaFicha;
+    //Constructor
     public Mascota(String IDPersona, String nombre, int edad, String raza, String especie) {
         this.nombre = nombre;
         this.edad = edad;
@@ -16,6 +17,9 @@ public class Mascota {
         this.especie = especie;
     }
     // Getters
+    public int IDMascota() {
+        return IDMascota;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -41,16 +45,15 @@ public class Mascota {
     public void setEspecie(String especie) {
         this.especie = especie;
     }
-    public void setVacuna() {
-        this.vacuna = true;
+    public void setVacuna(boolean vacuna) {
     }
-    public void setEsterilizacion() {
-        this.esterilizacion = true;
+    public void setEsterilizacion(boolean esterilizacion) {
     }
-    public void crearFicha(int dia, int mes, int anio) {
+    public void crearFicha(String IDFicha, int dia, int mes, int anio) {
         int cantMascotas = fichas.size();
-        String IDFicha = IDMascota = "."+String.valueOf(cantMascotas);
-        Ficha auxiliar = new Ficha(dia, mes, anio);
+        String IDFicha2 = "." + String.valueOf(cantMascotas);
+        IDMascota = Integer.parseInt(IDFicha2);
+        Ficha auxiliar = new Ficha(IDFicha, dia, mes, anio);
         fichas.add(auxiliar);
         ultimaFicha = auxiliar;
     }
@@ -60,14 +63,9 @@ public class Mascota {
     public void esterilizar(){
         ultimaFicha.setEsterilizacion(true);
     }
-    @Override
-    public String toString() {
-        return "id: " + idFicha + "\n" + "Fecha: " + dia + "-" + mes + "-" + anio
-    }
     public void mostrarFichas() {
-        for (ficha f: fichas) {
+        for (Ficha f: fichas) {
             System.out.println(f.toString());
-            
         }
     }
 }

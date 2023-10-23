@@ -1,5 +1,5 @@
 public class Ficha {
-    private int IDFicha;
+    private String IDFicha;
     private int anio;
     private int dia;
     private int mes;
@@ -8,7 +8,7 @@ public class Ficha {
     private boolean vacuna;
     private boolean esterilizacion;
     //Constructor
-    public Ficha(int IDFicha, int anio, int dia, int mes) {
+    public Ficha(String IDFicha, int anio, int dia, int mes) {
         this.IDFicha = IDFicha;
         this.anio = 2023;
         this.dia = 17;
@@ -18,6 +18,9 @@ public class Ficha {
         this.esterilizacion = false;
     }
     //Getters
+    public String getIDFicha() {
+        return IDFicha;
+    }
     public int getAnio() {
         return anio;
     }
@@ -42,6 +45,12 @@ public class Ficha {
     //Setter descripcion
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    public void setVacuna(boolean vacuna) {
+        this.vacuna = true;
+    }
+    public void setEsterilizacion(boolean esterilizacion) {
+        this.esterilizacion = true;
     }
     //Customers
     public void calcularPrecio() {

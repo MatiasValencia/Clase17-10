@@ -5,6 +5,6 @@ public class ejemplo {
         int id = 1;
         System.out.println(String.valueOf(id));
         ArrayList<Cliente> clientes = new ArrayList<>();
-        Cliente auxiliar = new Cliente(1, "Pedro", "pedro@aol.com"):
+        Cliente auxiliar = new Cliente(1, "Pedro", "pedro@aol.com");
     }
 }
